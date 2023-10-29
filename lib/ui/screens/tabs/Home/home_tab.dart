@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/ui/screens/tabs/Home/custom_bottom_navigator_bar.dart';
 import 'package:islami_app/ui/utils/app_assets.dart';
 import 'package:islami_app/ui/utils/app_colors.dart';
 import 'package:islami_app/ui/utils/app_theme.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   static const routeName = "home";
-  const Home({Key? key}) : super(key: key);
+
+  Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int currntIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +37,32 @@ class Home extends StatelessWidget {
           elevation: 0,
         ),
         body: Column(
-          children: [],
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(AppAssets.quranLogo),
+                ),
+              ),
+              height: MediaQuery.of(context).size.height * 0.25,
+            ),
+            const SizedBox(height: 14),
+            const Divider(
+              color: AppColors.primaryColor,
+              thickness: 3,
+            ),
+            const Text(
+              "Sora Name",
+              style: AppTheme.afterLogo,
+            ),
+            const Divider(
+              color: AppColors.primaryColor,
+              thickness: 3,
+            ),
+          ],
         ),
+        bottomNavigationBar:
+            CustomBottomNavigationBar(currentIndex: currntIndex),
       ),
     );
   }

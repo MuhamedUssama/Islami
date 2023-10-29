@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/ui/Home/home.dart';
+import 'package:islami_app/ui/screens/tabs/Home/home_tab.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      routes: {
+        Home.routeName: (_) => Home(),
+      },
+      initialRoute: Home.routeName,
     );
   }
 }

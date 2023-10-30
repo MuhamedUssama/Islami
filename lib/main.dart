@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/ui/screens/tabs/Home/home_tab.dart';
+import 'package:islami_app/ui/screens/Home/home_tab.dart';
+import 'package:islami_app/ui/screens/details/sura_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        Home.routeName: (_) => Home(),
+        Home.routeName: (_) => const Home(),
+        SuraDetails.routeName: (_) => SuraDetails(),
       },
       initialRoute: Home.routeName,
     );

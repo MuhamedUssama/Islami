@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/model/details_screen_args.dart';
 import 'package:islami_app/ui/screens/details/sura_details.dart';
 import 'package:islami_app/ui/utils/app_assets.dart';
 import 'package:islami_app/ui/utils/app_colors.dart';
@@ -41,7 +42,11 @@ class QuranScreen extends StatelessWidget {
             itemBuilder: (_, index) {
               return TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, SuraDetails.routeName);
+                  Navigator.pushNamed(context, SuraDetails.routeName,
+                      arguments: DetailsScreenArgs(
+                          fileName: "${index + 1}.txt",
+                          title: Constants.suraNames[index],
+                          isQuran: true));
                 },
                 child: Text(
                   Constants.suraNames[index],

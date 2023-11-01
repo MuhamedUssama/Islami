@@ -4,7 +4,9 @@ abstract class AppAssets {
   static const isAhadeth = "${baseImagePath}icon_hadeth.png";
   static const isSebha = "${baseImagePath}icon_sebha.png";
   static const isRadio = "${baseImagePath}icon_radio.png";
+
   static const quranLogo = "${baseImagePath}qur2an_screen_logo.png";
+  static const hadethLogo = "${baseImagePath}hadeth_logo.png";
 
   static const background = "${baseImagePath}default_bg.png";
 

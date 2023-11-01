@@ -5,16 +5,16 @@ import 'package:islami_app/ui/utils/app_assets.dart';
 import 'package:islami_app/ui/utils/app_colors.dart';
 import 'package:islami_app/ui/utils/app_theme.dart';
 
-class SuraDetails extends StatefulWidget {
+class SuraOrHadethDetails extends StatefulWidget {
   static const routeName = "details";
 
-  SuraDetails({super.key});
+  SuraOrHadethDetails({super.key});
 
   @override
-  State<SuraDetails> createState() => _SuraDetailsState();
+  State<SuraOrHadethDetails> createState() => _SuraOrHadethDetailsState();
 }
 
-class _SuraDetailsState extends State<SuraDetails> {
+class _SuraOrHadethDetailsState extends State<SuraOrHadethDetails> {
   String fileContent = "";
 
   late DetailsScreenArgs argument;
@@ -100,16 +100,22 @@ class _SuraDetailsState extends State<SuraDetails> {
   }
 
   void readFiles() async {
-    String file =
-        await rootBundle.loadString('assets/files/quran/${argument.fileName}');
-    fileContent = file;
+    if (argument.isQuran == true) {
+      String file = await rootBundle
+          .loadString('assets/files/quran/${argument.fileName}');
+      fileContent = file;
 
-    List<String> fileLines = file.split("\n");
-    for (int i = 0; i < fileLines.length; i++) {
-      fileLines[i] += "(${i + 1})  ";
+      List<String> fileLines = file.split("\n");
+      for (int i = 0; i < fileLines.length; i++) {
+        fileLines[i] += "(${i + 1})  ";
+      }
+
+      fileContent = fileLines.join();
+    } else {
+      String file = await rootBundle
+          .loadString('assets/files/hadeth/${argument.fileName}');
+      fileContent = file;
     }
-
-    fileContent = fileLines.join();
 
     setState(() {});
   }

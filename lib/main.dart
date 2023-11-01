@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         Home.routeName: (_) => const Home(),
-        SuraDetails.routeName: (_) => SuraDetails(),
+        SuraOrHadethDetails.routeName: (_) => SuraOrHadethDetails(),
       },
       initialRoute: Home.routeName,
     );

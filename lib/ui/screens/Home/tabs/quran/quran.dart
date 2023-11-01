@@ -29,7 +29,7 @@ class QuranScreen extends StatelessWidget {
           thickness: 3,
         ),
         const Text(
-          "Sora Name",
+          "اسم السورة",
           style: AppTheme.afterLogo,
         ),
         const Divider(
@@ -42,7 +42,7 @@ class QuranScreen extends StatelessWidget {
             itemBuilder: (_, index) {
               return TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, SuraDetails.routeName,
+                  Navigator.pushNamed(context, SuraOrHadethDetails.routeName,
                       arguments: DetailsScreenArgs(
                           fileName: "${index + 1}.txt",
                           title: Constants.suraNames[index],

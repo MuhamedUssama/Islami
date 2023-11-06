@@ -10,4 +10,15 @@ abstract class AppTheme {
     fontWeight: FontWeight.w600,
     fontFamily: "ElMessiri",
   );
+  static const TextStyle sebhaCounter = TextStyle(
+    color: AppColors.accentColor,
+    fontSize: 28,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle azkar = TextStyle(
+    color: AppColors.white,
+    fontSize: 28,
+    fontWeight: FontWeight.w400,
+  );
 }

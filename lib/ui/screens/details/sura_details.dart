@@ -8,7 +8,7 @@ import 'package:islami_app/ui/utils/app_theme.dart';
 class SuraOrHadethDetails extends StatefulWidget {
   static const routeName = "details";
 
-  SuraOrHadethDetails({super.key});
+  const SuraOrHadethDetails({super.key});
 
   @override
   State<SuraOrHadethDetails> createState() => _SuraOrHadethDetailsState();

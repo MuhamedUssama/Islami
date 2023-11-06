@@ -7,6 +7,8 @@ abstract class AppAssets {
 
   static const quranLogo = "${baseImagePath}qur2an_screen_logo.png";
   static const hadethLogo = "${baseImagePath}hadeth_logo.png";
+  static const sebhaLogo = "${baseImagePath}body_sebha_logo.png";
+  static const sebhaHead = "${baseImagePath}head_sebha_logo.png";
 
   static const background = "${baseImagePath}default_bg.png";
 

@@ -4,7 +4,6 @@ import 'package:islami_app/ui/screens/details/sura_details.dart';
 import 'package:islami_app/ui/utils/app_assets.dart';
 import 'package:islami_app/ui/utils/app_colors.dart';
 import 'package:islami_app/ui/utils/app_theme.dart';
-import 'package:islami_app/ui/utils/constants.dart';
 
 class AhadethScreen extends StatelessWidget {
   List<String> ahadethName = List.generate(50, (index) {

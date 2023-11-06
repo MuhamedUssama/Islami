@@ -12,6 +12,15 @@ class SebhaScreen extends StatefulWidget {
 
 class _SebhaScreenState extends State<SebhaScreen> {
   int sebhaCounter = 0;
+  int azkarLength = 0;
+  double angle = 0;
+
+  List<String> azkarNames = [
+    "سبحان الله",
+    "الحمدلله",
+    "الله اكبر",
+    "لا اله الا الله"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +49,10 @@ class _SebhaScreenState extends State<SebhaScreen> {
                   onTap: () {
                     sebhaLogic();
                   },
-                  child: Image.asset(AppAssets.sebhaLogo),
+                  child: Transform.rotate(
+                    angle: angle,
+                    child: Image.asset(AppAssets.sebhaLogo),
+                  ),
                 ),
               ],
             ),
@@ -75,8 +87,8 @@ class _SebhaScreenState extends State<SebhaScreen> {
             child: Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: width * 0.09, vertical: height * 0.01),
-              child: const Text(
-                "سبحان الله",
+              child: Text(
+                azkarNames[azkarLength],
                 style: AppTheme.azkar,
               ),
             ),
@@ -87,7 +99,17 @@ class _SebhaScreenState extends State<SebhaScreen> {
   }
 
   void sebhaLogic() {
-    sebhaCounter++;
+    if (sebhaCounter == 33) {
+      sebhaCounter = 1;
+      azkarNames[azkarLength++];
+      if (azkarLength > 3) {
+        azkarLength = 0;
+      }
+    } else {
+      sebhaCounter++;
+    }
+
+    angle += 30;
 
     setState(() {});
   }

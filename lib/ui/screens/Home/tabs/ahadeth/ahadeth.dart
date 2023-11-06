@@ -6,7 +6,7 @@ import 'package:islami_app/ui/utils/app_colors.dart';
 import 'package:islami_app/ui/utils/app_theme.dart';
 
 class AhadethScreen extends StatelessWidget {
-  List<String> ahadethName = List.generate(50, (index) {
+  final List<String> ahadethName = List.generate(50, (index) {
     return " ${index + 1} الحديث رقم";
   });
 

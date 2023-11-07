@@ -12,6 +12,7 @@ abstract class AppAssets {
   static const sebhaHead = "${baseImagePath}head_sebha_logo.png";
 
   static const background = "${baseImagePath}default_bg.png";
+  static const splash = "${baseImagePath}splash.jpg";
 
   static const hadethIcon = "${baseImagePath}icon_hadeth.png";
   static const quranIcon = "${baseImagePath}icon_quran.png";
